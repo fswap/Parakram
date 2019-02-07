@@ -25,7 +25,7 @@ export class ListPage implements OnInit {
     'build'
   ];
  // console.log(allTodos);
-  public items: Array<{ title: string; note: string; icon: string; time: any }> = [];
+  public items: Array<{ title: string; note: string; icon: string; time: any; venue: any; }> = [];
   constructor() {
     this.getData();
   }
@@ -79,7 +79,8 @@ API.graphql(graphqlOperation(subscriptions.onUpdateTest,));
       this.items.push({
         title: 'Item ' ,
         note: 'This is item #',
-        time: 'ss' + JSON.stringify(fixture.Time),
+        time: (fixture.Time),
+        venue:(fixture.Venue),
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
     });
